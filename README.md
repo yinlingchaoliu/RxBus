@@ -1,5 +1,5 @@
 
-#### 一、重写RxBus原因
+## 一、重写RxBus原因
 ```
 市面上开源的RxBus并没有完全满足三点
 1、EventBus式使用方法，无学习成本
@@ -7,16 +7,16 @@
 3、完美替换EventBus
 ```
 
-#### 二、重写思路
+## 二、重写思路
 ```
 1、EventBus式使用方法，无学习成本
 2、rxjava是观察者模式，可以替换Eventbus消息队列和处理消息的策略模式
 ```
 
-#### eventbus源代码分析
+## eventbus源代码分析
 https://www.jianshu.com/p/7dc9a097090d
 
-#### 定制RxBus2源代码
+## 定制RxBus2源代码
 https://github.com/yinlingchaoliu/RxBus
 
 ## Add dependency
@@ -62,7 +62,7 @@ public void receiveEventMain(EventMain event) {
 ```
 
 ## 特别感谢
-
+```
 1、重点参考优点：EventBus使用方式，缺点：功能不够完善，非线程安全！！！
 [写框架】基于RxJava2，高仿EventBus打造RxBus2](https://www.jianshu.com/p/1fb3bfa7c427)
 [RxBus2源码](https://github.com/KingJA/RxBus2)
@@ -73,7 +73,7 @@ public void receiveEventMain(EventMain event) {
 3、优点：功能全面，代码少   缺点：还需要编写特定业务Manange类
 [这个 RxBus 稳如老狗](https://blankj.com/2018/05/09/awesome-rxbus/)
 [RxBus源代码](https://github.com/Blankj/RxBus)
-
+```
 
 ## License
 
