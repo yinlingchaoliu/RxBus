@@ -1,8 +1,7 @@
 package com.caliburn.rxbus2;
 
-
-public class RxBusException extends RuntimeException {
-    public RxBusException(String detailMessage) {
+class RxBusException extends RuntimeException {
+    RxBusException(String detailMessage) {
         super(detailMessage);
     }
 }

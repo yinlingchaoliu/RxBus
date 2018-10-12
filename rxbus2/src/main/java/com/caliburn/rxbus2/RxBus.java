@@ -19,6 +19,8 @@ import io.reactivex.processors.PublishProcessor;
  * 增加黏性事件
  * 线程安全
  * 支持EventBus ThreadMode 所有执行策略
+ * 避免内部代码被访问
+ *
  * @author chentong
  */
 public class RxBus {
@@ -83,7 +85,7 @@ public class RxBus {
             disposableMap.put(eventType, disposable);
         }
 
-        //支持黏性事件 add by chentong
+        //support stick event add by chentong
         if (subscriberMethod.isSticky()) {
             addStickySubscriber(subsciber, subscriberMethod);
         }
@@ -194,7 +196,7 @@ public class RxBus {
     /**
      * Unregisters the given subscriber from all event classes.
      */
-    public synchronized void unregister(Object subscriber) {
+    public void unregister(Object subscriber) {
         Class<?> subscriberClass = subscriber.getClass();
         synchronized (mDisposableMap) {
             Map<Class<?>, Disposable> disposableMap = mDisposableMap.get(subscriberClass);
@@ -233,7 +235,7 @@ public class RxBus {
     /**
      * Unregisters the given subscriber of eventType from all event classes.
      */
-    public synchronized void unregister(Object subscriber, Class<?> eventType) {
+    public void unregister(Object subscriber, Class<?> eventType) {
         Class<?> subscriberClass = subscriber.getClass();
         synchronized (mDisposableMap) {
             Map<Class<?>, Disposable> disposableMap = mDisposableMap.get(subscriberClass);

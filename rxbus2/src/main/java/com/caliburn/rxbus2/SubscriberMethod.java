@@ -7,7 +7,7 @@ import io.reactivex.Scheduler;
 /**
  * 参考eventbus
  */
-public class SubscriberMethod {
+class SubscriberMethod {
 
     final Scheduler threadMode;
     final Method method;
@@ -15,7 +15,7 @@ public class SubscriberMethod {
     final int priority;
     final boolean sticky;
 
-    public SubscriberMethod(Method method, Class<?> eventType, Scheduler threadMode, int priority, boolean sticky) {
+    SubscriberMethod(Method method, Class<?> eventType, Scheduler threadMode, int priority, boolean sticky) {
         this.method = method;
         this.eventType = eventType;
         this.threadMode = threadMode;
@@ -23,15 +23,15 @@ public class SubscriberMethod {
         this.sticky = sticky;
     }
 
-    public Scheduler getThreadMode() {
+    Scheduler getThreadMode() {
         return threadMode;
     }
 
-    public Method getMethod() {
+    Method getMethod() {
         return method;
     }
 
-    public Class<?> getEventType() {
+    Class<?> getEventType() {
         return eventType;
     }
 
@@ -39,7 +39,7 @@ public class SubscriberMethod {
         return priority;
     }
 
-    public boolean isSticky() {
+    boolean isSticky() {
         return sticky;
     }
 

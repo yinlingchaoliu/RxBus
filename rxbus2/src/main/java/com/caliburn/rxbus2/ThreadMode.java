@@ -1,6 +1,8 @@
 package com.caliburn.rxbus2;
 
-
+/**
+ * 策略模式
+ */
 public enum ThreadMode {
     SINGLE,
     COMPUTATION,

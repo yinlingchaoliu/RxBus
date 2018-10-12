@@ -13,12 +13,12 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 寻找当前类所有注解
  */
-public class SubscriberMethodFinder {
+class SubscriberMethodFinder {
     private static final int BRIDGE = 0x40;
     private static final int SYNTHETIC = 0x1000;
     private static final int MODIFIERS_IGNORE = Modifier.ABSTRACT | Modifier.STATIC | BRIDGE | SYNTHETIC;
 
-    public List<SubscriberMethod> findSubscriberMethods(Class<?> subscriberClass) {
+    List<SubscriberMethod> findSubscriberMethods(Class<?> subscriberClass) {
         List<SubscriberMethod> subscriberMethods = findUsingReflection(subscriberClass);
         if (subscriberMethods.isEmpty()) {
             throw new RxBusException("Subscriber " + subscriberClass
@@ -41,7 +41,7 @@ public class SubscriberMethodFinder {
                         Class<?> eventType = parameterTypes[0];
                         int priority = subscribeAnnotation.priority();
                         boolean sticky = subscribeAnnotation.sticky();
-                        subscriberMethods.add(new SubscriberMethod(method, eventType, getThreadMode(threadMode),priority,sticky));
+                        subscriberMethods.add(new SubscriberMethod(method, eventType, getThreadMode(threadMode), priority, sticky));
                     }
                 }
             }
