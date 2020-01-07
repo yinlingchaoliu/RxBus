@@ -58,7 +58,7 @@ public void receiveEventMain(EventMain event) {
 #### step 3: unregister
 ```java
     RxBus.getDefault().unregister(this);
-    RxBus.getDefault().unregister(this,eventA);
+    RxBus.getDefault().unregister(this);
 ```
 
 ## 特别感谢
